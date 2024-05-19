@@ -1,0 +1,261 @@
+@import "./partials/colours";
+@import "./partials/fonts";
+@import "./partials/media-queries";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  width: 100%;
+  font-family: "Avenir", sans-serif;
+
+  @include mobile {
+    h1 {
+      font-family: "AvenirBold", sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    h4 {
+      font-family: "AvenirDemi", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 22px;
+    }
+
+    p {
+      font-family: "Avenir", sans-serif;
+      font-weight: 400;
+      font-size: 13px;
+      line-height: 18px;
+    }
+  }
+
+  @include tablet {
+    h1 {
+      font-family: "AvenirBold", sans-serif;
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 44px;
+    }
+
+    h4 {
+      font-family: "AvenirDemi", sans-serif;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    p {
+      font-family: "Avenir", sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
+
+body {
+  margin: 0px 16px;
+  font-size: 16px;
+
+  @include tablet {
+    margin: 0px 36px;
+  }
+
+  @include desktop {
+    margin: 0px auto;
+  }
+}
+
+.navbar {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: $primaryBlack;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 100px;
+
+  @include mobile {
+    flex-direction: column;
+  }
+
+  &-logo {
+    max-height: 20px;
+    font-size: 24px;
+    line-height: 32px;
+    color: $primaryWhite;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin: 24px 0px;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    margin: 0px;
+
+    li {
+      text-align: center;
+      padding-bottom: 11px;
+      margin: 0px;
+    }
+
+    .navbar--current {
+      color: $primaryWhite;
+      font-weight: bold;
+      border-bottom: 5px solid $primaryWhite;
+    }
+
+    a:link {
+      text-decoration: none;
+      color: $secondarySilver;
+    }
+
+    a:hover {
+      color: $primaryWhite;
+      border-bottom: 5px solid $primaryWhite;
+    }
+
+    a:active {
+      color: $primaryWhite;
+    }
+
+    a:visited {
+      color: $secondarySilver;
+    }
+  }
+}
+
+.hero {
+  margin: 0px 0px;
+  background-image: linear-gradient(
+      rgba(50, 50, 50, 0.5),
+      rgba(50, 50, 50, 0.5)
+    ),
+    url("../assets/Images/hero-bio.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  height: 100vw;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__title {
+    color: #ffffff;
+    font-family: "AvenirBold", sans-serif;
+    margin-left: 16px;
+
+    @include tablet {
+      font-size: 60px;
+      line-height: 68px;
+      margin-left: 36px;
+    }
+
+    @include desktop {
+      margin-left: auto;
+    }
+  }
+}
+
+.about {
+  padding-top: 24px;
+
+  img {
+    height: auto;
+    justify-content: center;
+
+    @include mobile {
+      max-width: calc(100% - 32px);
+    }
+  }
+}
+
+.photo-gallery {
+  background-color: $secondaryWhite;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 24px;
+}
+
+.article__photos--images {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+
+  .article__responsive-image {
+    margin: 10px;
+    width: 80%;
+    height: auto;
+  }
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+}
+
+footer {
+  background-color: $primaryBlack;
+  color: $primaryWhite;
+  margin-top: 16px;
+  margin-bottom: 0px;
+
+  div {
+    margin: 0px 16px;
+  }
+
+  .social__icons {
+    display: flex;
+
+    a {
+      width: auto;
+    }
+
+    .icons {
+      height: 30px;
+      width: auto;
+      margin: 0px 20px;
+    }
+  }
+
+  .navbar-logo {
+    max-height: 20px;
+    font-size: 24px;
+    line-height: 32px;
+    color: $primaryWhite;
+    text-decoration: none;
+    margin: 24px 0px;
+  }
+
+  @include tablet {
+    p {
+      font-size: 12px;
+    }
+  }
+
+  @include desktop {
+  }
+}
