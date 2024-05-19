@@ -123,6 +123,32 @@ body {
 .navbar ul a:visited {
   color: #e1e1e1;
 }
+@media screen and (min-width: 768px) {
+  .navbar {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .navbar .navbar-logo {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    align-items: center;
+  }
+  .navbar ul {
+    justify-content: left;
+    margin-top: 16px;
+  }
+  .navbar ul .navbar--current {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+  .navbar a {
+    padding: 0px 36px;
+  }
+  .navbar li {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+}
 
 .hero {
   margin: 0px 0px;
@@ -163,12 +189,12 @@ body {
 @media screen and (min-width: 768px) {
   .about {
     padding-top: 48px;
-    margin: 0px 36px;
+    margin: 0px 36px 0px 36px;
   }
 }
 @media screen and (min-width: 1280px) {
   .about {
-    margin: 0px auto;
+    margin: 0px 72px;
   }
 }
 .about .about--padding {
@@ -180,13 +206,24 @@ body {
     padding-bottom: 36px;
   }
 }
-.about img {
+.about .about__artist {
+  margin-top: 0px;
+}
+.about img,
+.about .about--quote {
   height: auto;
   justify-content: center;
 }
 @media screen and (max-width: 768px) {
-  .about img {
+  .about img,
+  .about .about--quote {
     max-width: calc(100% - 32px);
+  }
+}
+@media screen and (min-width: 768px) {
+  .about img,
+  .about .about--quote {
+    max-width: calc(100% - 72px);
   }
 }
 .about p {
@@ -195,6 +232,18 @@ body {
   margin-bottom: 16px;
   margin-top: 0px;
   width: 85%;
+}
+@media screen and (min-width: 768px) {
+  .about p {
+    max-width: calc(100% - 72px);
+    margin-right: 10px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .about .about__text {
+    display: flex;
+    max-width: calc(100% - 72px);
+  }
 }
 
 .photo-gallery {
@@ -301,7 +350,24 @@ footer h6 {
   margin-top: 16px;
 }
 @media screen and (min-width: 768px) {
+  footer {
+    display: flex;
+    flex-direction: column;
+  }
   footer p {
     font-size: 12px;
+  }
+  footer .social {
+    display: flex;
+  }
+  footer .social h1 {
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+  }
+  footer .social__icons {
+    padding: 36px;
+  }
+  footer .entertainment {
+    display: flex;
   }
 }/*# sourceMappingURL=bio.css.map */

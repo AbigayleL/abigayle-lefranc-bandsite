@@ -124,6 +124,31 @@ body {
       color: $secondarySilver;
     }
   }
+
+  @include tablet {
+    align-items: center;
+    justify-content: flex-start;
+
+    .navbar-logo {
+      max-width: fit-content;
+      align-items: center;
+    }
+    ul {
+      justify-content: left;
+      margin-top: 16px;
+
+      .navbar--current {
+        max-width: fit-content;
+      }
+    }
+    a {
+      padding: 0px 36px;
+    }
+
+    li {
+      max-width: fit-content;
+    }
+  }
 }
 
 .hero {
@@ -167,11 +192,11 @@ body {
 
   @include tablet {
     padding-top: 48px;
-    margin: 0px 36px;
+    margin: 0px 36px 0px 36px;
   }
 
   @include desktop {
-    margin: 0px auto;
+    margin: 0px 72px;
   }
 
   .about--padding {
@@ -183,12 +208,20 @@ body {
     }
   }
 
-  img {
+  .about__artist {
+    margin-top: 0px;
+  }
+  img,
+  .about--quote {
     height: auto;
     justify-content: center;
 
     @include mobile {
       max-width: calc(100% - 32px);
+    }
+
+    @include tablet {
+      max-width: calc(100% - 72px);
     }
   }
 
@@ -198,6 +231,18 @@ body {
     margin-bottom: 16px;
     margin-top: 0px;
     width: 85%;
+
+    @include tablet {
+      max-width: calc(100% - 72px);
+      margin-right: 10px;
+    }
+  }
+
+  @include tablet {
+    .about__text {
+      display: flex;
+      max-width: calc(100% - 72px);
+    }
   }
 }
 
@@ -312,6 +357,24 @@ footer {
   @include tablet {
     p {
       font-size: 12px;
+    }
+
+    display: flex;
+    flex-direction: column;
+
+    .social {
+      display: flex;
+      h1 {
+        max-width: fit-content;
+      }
+
+      &__icons {
+        padding: 36px;
+      }
+    }
+
+    .entertainment {
+      display: flex;
     }
   }
 
