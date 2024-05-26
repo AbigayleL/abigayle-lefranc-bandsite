@@ -258,4 +258,94 @@ footer h6 {
 
 body {
   font-size: 16px;
+}
+
+.hero {
+  margin: 0px 0px;
+  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url("../assets/Images/Photo-gallery-3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+}
+.hero__title {
+  color: #ffffff;
+  font-family: "Avenir", sans-serif;
+  margin-left: 16px;
+}
+@media screen and (min-width: 768px) {
+  .hero__title {
+    font-size: 60px;
+    line-height: 68px;
+    margin-left: 36px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .hero__title {
+    margin-left: auto;
+  }
+}
+.hero__iframe {
+  margin-left: 1rem;
+}
+
+.shows {
+  margin-bottom: 1rem;
+  padding: 10px;
+}
+.shows .selected {
+  background-color: #e1e1e1;
+}
+.shows h2 {
+  padding-bottom: 1rem;
+}
+.shows h6 {
+  color: #afafaf;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.shows div {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #e1e1e1;
+}
+.shows #currentshows__div {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+  font-family: "Avenir", sans-serif;
+  width: 120%;
+}
+.shows button {
+  color: #ffffff;
+  background-color: #323232;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  text-align: center;
+  width: 75%;
+  margin-top: 16px;
+}
+.shows button:hover {
+  background-color: #191919;
+}
+@media screen and (min-width: 768px) {
+  .shows {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .shows {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+  }
 }/*# sourceMappingURL=shows.css.map */

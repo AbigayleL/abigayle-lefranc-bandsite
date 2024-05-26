@@ -61,3 +61,99 @@
 body {
   font-size: 16px;
 }
+
+.hero {
+  margin: 0px 0px;
+  background-image: linear-gradient(
+      rgba(50, 50, 50, 0.5),
+      rgba(50, 50, 50, 0.5)
+    ),
+    url("../assets/Images/Photo-gallery-3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 100px;
+  height: 100vw;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: flex-start;
+  align-items: center;
+
+  &__title {
+    color: #ffffff;
+    font-family: "Avenir", sans-serif;
+    margin-left: 16px;
+
+    @include tablet {
+      font-size: 60px;
+      line-height: 68px;
+      margin-left: 36px;
+    }
+
+    @include desktop {
+      margin-left: auto;
+    }
+  }
+
+  &__iframe {
+    margin-left: 1rem;
+  }
+}
+
+.shows {
+  margin-bottom: 1rem;
+  padding: 10px;
+
+  .selected {
+    background-color: #e1e1e1;
+  }
+
+  h2 {
+    padding-bottom: 1rem;
+  }
+  h6 {
+    color: $primarySilver;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  div {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $secondarySilver;
+  }
+
+  #currentshows__div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    font-family: "Avenir", sans-serif;
+    width: 120%;
+  }
+
+  button {
+    color: $primaryWhite;
+    background-color: $primaryBlack;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+    width: 75%;
+    margin-top: 16px;
+
+    &:hover {
+      background-color: darken($primaryBlack, 10%);
+    }
+  }
+
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 2rem;
+  }
+  @include desktop {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 3rem;
+  }
+}
