@@ -9,7 +9,7 @@
   padding: 0;
   width: 100%;
   font-family: "Avenir", sans-serif;
-  margin: 0px;
+  margin: 0rem;
 
   h1,
   h2 {
@@ -59,11 +59,11 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .hero {
-  margin: 0px 0px;
+  margin: 0rem 0rem;
   background-image: linear-gradient(
       rgba(50, 50, 50, 0.5),
       rgba(50, 50, 50, 0.5)
@@ -72,7 +72,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  margin-top: 100px;
+  margin-top: 6.25rem;
   height: 100vw;
   display: flex;
   width: 100%;
@@ -82,12 +82,12 @@ body {
   &__title {
     color: #ffffff;
     font-family: "Avenir", sans-serif;
-    margin-left: 16px;
+    margin-left: 1rem;
 
     @include tablet {
       font-size: 60px;
       line-height: 68px;
-      margin-left: 36px;
+      margin-left: 2.25rem;
     }
 
     @include desktop {
@@ -97,8 +97,8 @@ body {
 }
 
 .about {
-  padding-top: 24px;
-  margin: 0px 16px;
+  padding-top: 1.5rem;
+  margin: 0rem 1rem;
   width: 100%;
   background-color: $primaryWhite;
 
@@ -108,24 +108,24 @@ body {
 
   @include tablet {
     padding-top: 48px;
-    margin: 0px 36px 0px 36px;
+    margin: 0rem 2.25rem 0rem 2.25rem;
   }
 
   @include desktop {
-    margin: 0px 72px;
+    margin: 0rem 4.5rem;
   }
 
   .about--padding {
-    padding-bottom: 16px;
-    margin-bottom: 0px;
+    padding-bottom: 1rem;
+    margin-bottom: 0rem;
 
     @include tablet {
-      padding-bottom: 36px;
+      padding-bottom: 2.25rem;
     }
   }
 
   .about__artist {
-    margin-top: 0px;
+    margin-top: 0rem;
   }
   img,
   .about--quote {
@@ -141,13 +141,13 @@ body {
   p {
     text-align: left;
     width: 75%;
-    margin-bottom: 16px;
-    margin-top: 0px;
+    margin-bottom: 1rem;
+    margin-top: 0rem;
     width: 85%;
 
     @include tablet {
       max-width: calc(100% - 72px);
-      margin-right: 10px;
+      margin-right: 0.625rem;
     }
   }
 
@@ -163,8 +163,8 @@ body {
   background-color: $secondaryWhite;
   width: 100%;
   margin: 0 auto;
-  padding: 0px 16px;
-  padding-top: 24px;
+  padding: 0px 1rem;
+  padding-top: 1.5rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -218,6 +218,16 @@ body {
   max-width: 100%;
   width: 100%;
   margin-left: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  align-items: center;
+
+  @include tablet {
+    width: 70%;
+  }
+  @include desktop {
+    width: 50%;
+  }
 
   h2 {
     font-size: 1.5rem;
@@ -252,6 +262,7 @@ body {
       background-color: $secondaryWhite;
       border-radius: 2px;
       border-color: $primarySilver;
+      color: $primaryBlack;
     }
 
     #name {
@@ -259,6 +270,7 @@ body {
       border-radius: 2px;
       border-color: $primarySilver;
       color: $primarySilver;
+      color: $primaryBlack;
     }
 
     input[type="submit"] {
@@ -269,24 +281,9 @@ body {
       font-size: 1rem;
       text-align: center;
     }
-  }
 
-  @include tablet {
-    margin-left: 2rem;
-    h2 {
-      margin-left: 2rem;
-    }
-    &__Div {
-      justify-content: center;
-    }
-  }
-  @include desktop {
-    margin-left: 3rem;
-    h2 {
-      margin-left: 3rem;
-    }
-    &__Div {
-      justify-content: center;
+    input[type="text"]:focus {
+      border: 3px solid #555;
     }
   }
 }
@@ -311,8 +308,6 @@ body {
     border-top: 1px solid $secondarySilver;
     border-radius: 5px;
     display: flex;
-    flex-direction: column;
-
     width: 90%;
     margin: 0 auto;
 
@@ -321,6 +316,16 @@ body {
     }
     @include desktop {
       width: 50%;
+    }
+
+    .comment-title-container {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+
+      p {
+        text-align: right;
+      }
     }
   }
 }

@@ -73,13 +73,18 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   margin-top: 100px;
-  height: 100vw;
+  height: 60vw;
   display: flex;
   flex-direction: column;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 
+  h4 {
+    color: #ffffff;
+    margin: 16px;
+    margin-top: 32px;
+  }
   &__title {
     color: #ffffff;
     font-family: "Avenir", sans-serif;
@@ -98,6 +103,27 @@ body {
 
   &__iframe {
     margin-left: 1rem;
+    margin-top: 1rem;
+  }
+  iframe {
+    width: 90%;
+  }
+
+  @include desktop {
+    flex-direction: row;
+
+    .hero__left {
+      margin-left: 8rem;
+      margin-right: 2.5rem;
+      width: 60%;
+    }
+
+    &__iframe {
+      width: 60%;
+    }
+    iframe {
+      width: 60%;
+    }
   }
 }
 
@@ -105,12 +131,21 @@ body {
   margin-bottom: 1rem;
   padding: 10px;
 
+  h5 {
+    display: none;
+    color: $primarySilver;
+  }
+
+  h4 {
+    visibility: hidden;
+  }
+
   .selected {
     background-color: #e1e1e1;
   }
 
   h2 {
-    padding-bottom: 1rem;
+    margin: 16px;
   }
   h6 {
     color: $primarySilver;
@@ -119,6 +154,9 @@ body {
   }
   div {
     padding-bottom: 10px;
+  }
+
+  .show-items {
     border-bottom: 1px solid $secondarySilver;
   }
 
@@ -128,7 +166,7 @@ body {
     margin-left: 1rem;
     margin-bottom: 1rem;
     font-family: "Avenir", sans-serif;
-    width: 120%;
+    width: 90%;
   }
 
   button {
@@ -147,13 +185,28 @@ body {
   }
 
   @include tablet {
-    display: flex;
-    justify-content: space-between;
     margin-left: 2rem;
+    h5 {
+      display: block;
+    }
+
+    h6 {
+      display: none;
+    }
+    div {
+      display: flex;
+      align-items: center;
+    }
   }
   @include desktop {
     display: flex;
-    justify-content: space-between;
+    h2 {
+      width: 20%;
+    }
+    div {
+      margin-top: 16px;
+      width: 80%;
+    }
     margin-left: 3rem;
   }
 }

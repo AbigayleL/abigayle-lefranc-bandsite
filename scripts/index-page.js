@@ -52,6 +52,12 @@ function renderComments() {
     const profilePicture = document.createElement("div");
     profilePicture.classList.add("profile-picture");
 
+    const profilematerial = document.createElement("div");
+    profilematerial.classList.add("comment-material-container");
+
+    const profiletitle = document.createElement("div");
+    profiletitle.classList.add("comment-title-container");
+
     const name = document.createElement("h3");
     name.innerText = post.name;
 
@@ -62,9 +68,11 @@ function renderComments() {
     comment.innerText = post.comment;
 
     postDiv.appendChild(profilePicture);
-    postDiv.appendChild(name);
-    postDiv.appendChild(date);
-    postDiv.appendChild(comment);
+    profiletitle.appendChild(name);
+    profiletitle.appendChild(date);
+    profilematerial.appendChild(profiletitle);
+    profilematerial.appendChild(comment);
+    postDiv.appendChild(profilematerial);
 
     commentsContainer.appendChild(postDiv);
   });

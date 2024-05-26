@@ -34,6 +34,7 @@ const showDates = [
 const showsContainer = document.getElementById("currentshows__div");
 showDates.forEach(function (show) {
   const showDateEl = document.createElement("div");
+  showDateEl.classList.add("show-items");
   showDateEl.innerHTML = `
         <h6>Date</h6>
         <p>${show.DATE}</p>
