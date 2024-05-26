@@ -1,38 +1,41 @@
 @import "./partials/colours";
 @import "./partials/fonts";
 @import "./partials/media-queries";
+@import "./partials/footer";
+@import "./partials/navbar";
 
 * {
   box-sizing: border-box;
   padding: 0;
   width: 100%;
   font-family: "Avenir", sans-serif;
+  margin: 0px;
 
-  @include mobile {
-    h1 {
-      font-family: "Avenir", sans-serif;
-      font-weight: 700;
-      font-size: 24px;
-      line-height: 32px;
-    }
+  h1,
+  h2 {
+    font-family: "Avenir", sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+  }
 
-    h4 {
-      font-family: "Avenir", sans-serif;
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 22px;
-    }
+  h4 {
+    font-family: "Avenir", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 22px;
+  }
 
-    p {
-      font-family: "Avenir", sans-serif;
-      font-weight: 400;
-      font-size: 13px;
-      line-height: 18px;
-    }
+  p {
+    font-family: "Avenir", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 18px;
   }
 
   @include tablet {
-    h1 {
+    h1,
+    h2 {
       font-family: "Avenir", sans-serif;
       font-weight: 700;
       font-size: 36px;
@@ -57,93 +60,6 @@
 
 body {
   font-size: 16px;
-}
-
-.navbar {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  background-color: $primaryBlack;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 5;
-  height: 100px;
-
-  @include mobile {
-    flex-direction: column;
-  }
-
-  &-logo {
-    max-height: 20px;
-    font-size: 24px;
-    line-height: 32px;
-    color: $primaryWhite;
-    text-decoration: none;
-    text-align: center;
-    display: inline-block;
-    margin: 24px 0px;
-  }
-
-  ul {
-    list-style-type: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-grow: 1;
-    height: 100%;
-    margin: 0px;
-
-    li {
-      text-align: center;
-      padding-bottom: 11px;
-      margin: 0px;
-    }
-
-    .navbar--current {
-      color: $primaryWhite;
-      font-weight: bold;
-      border-bottom: 5px solid $primaryWhite;
-    }
-
-    a:link {
-      text-decoration: none;
-      color: $secondarySilver;
-    }
-
-    a:active {
-      color: $primaryWhite;
-    }
-
-    a:visited {
-      color: $primaryWhite;
-    }
-  }
-
-  @include tablet {
-    align-items: center;
-    justify-content: flex-start;
-
-    .navbar-logo {
-      max-width: fit-content;
-      align-items: center;
-    }
-    ul {
-      justify-content: left;
-      margin-top: 16px;
-
-      .navbar--current {
-        max-width: fit-content;
-      }
-    }
-    a {
-      padding: 0px 36px;
-    }
-
-    li {
-      max-width: fit-content;
-    }
-  }
 }
 
 .hero {
@@ -215,10 +131,7 @@ body {
   .about--quote {
     height: auto;
     justify-content: center;
-
-    @include mobile {
-      max-width: calc(100% - 32px);
-    }
+    max-width: calc(100% - 32px);
 
     @include tablet {
       max-width: calc(100% - 72px);
@@ -300,85 +213,114 @@ body {
   }
 }
 
-footer {
-  background-color: $primaryBlack;
-  color: $primaryWhite;
-  margin-top: 16px;
-  margin-bottom: 0px;
+.add-comment {
+  color: $primarySilver;
+  max-width: 100%;
+  width: 100%;
+  margin-left: 1rem;
 
-  h1,
-  div {
-    margin: 0px 16px;
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-left: 1rem;
+    color: $primaryBlack;
   }
 
-  h1 {
-    padding-top: 16px;
-
-    @include tablet {
-      padding-top: 36px;
-    }
-  }
-
-  .social__icons {
+  &__div {
     display: flex;
-    margin-top: 16px;
+    justify-content: flex-start;
+    margin-left: 1rem;
 
-    a {
-      width: auto;
+    &-form--image {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
     }
 
-    .icons {
-      height: 30px;
-      width: auto;
-      margin: 0px 20px;
+    &-form-section {
+      display: flex;
+      flex-direction: column;
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+      font-family: "Avenir", sans-serif;
+      width: 80%;
     }
 
-    .first-icon {
-      margin-left: 0px;
+    #comment {
+      height: 100px;
+      color: $primarySilver;
+      background-color: $secondaryWhite;
+      border-radius: 2px;
+      border-color: $primarySilver;
     }
-  }
 
-  .navbar-logo {
-    max-height: 20px;
-    font-size: 24px;
-    line-height: 32px;
-    color: $primaryWhite;
-    text-decoration: none;
-    margin: 24px 0px;
-    text-align: left;
-    margin-bottom: 0px;
-  }
+    #name {
+      background-color: $secondaryWhite;
+      border-radius: 2px;
+      border-color: $primarySilver;
+      color: $primarySilver;
+    }
 
-  h6 {
-    font-weight: normal;
-    padding-bottom: 16px;
-    margin-top: 16px;
+    input[type="submit"] {
+      color: $primaryWhite;
+      background-color: $primaryBlack;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      text-align: center;
+    }
   }
 
   @include tablet {
-    p {
-      font-size: 12px;
+    margin-left: 2rem;
+    h2 {
+      margin-left: 2rem;
     }
-
-    display: flex;
-    flex-direction: column;
-
-    .social {
-      display: flex;
-      h1 {
-        max-width: fit-content;
-      }
-
-      &__icons {
-        padding: 36px;
-      }
+    &__Div {
+      justify-content: center;
     }
+  }
+  @include desktop {
+    margin-left: 3rem;
+    h2 {
+      margin-left: 3rem;
+    }
+    &__Div {
+      justify-content: center;
+    }
+  }
+}
 
-    .entertainment {
-      display: flex;
+.comments--section {
+  .profile-picture {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $primarySilver;
+    margin-right: 10px;
+
+    @include tablet {
+      width: 48px;
+      height: 48px;
     }
   }
 
-  @include desktop {
+  .comment-Container {
+    margin-bottom: 1rem;
+    padding: 15px;
+    border-top: 1px solid $secondarySilver;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+
+    width: 90%;
+    margin: 0 auto;
+
+    @include tablet {
+      width: 70%;
+    }
+    @include desktop {
+      width: 50%;
+    }
   }
 }

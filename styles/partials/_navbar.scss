@@ -1,0 +1,89 @@
+@import "colours";
+@import "fonts";
+@import "media-queries";
+
+.navbar {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: $primaryBlack;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  height: 100px;
+  flex-direction: column;
+
+  &-logo {
+    max-height: 20px;
+    font-size: 24px;
+    line-height: 32px;
+    color: $primaryWhite;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    margin: 24px 0px;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    height: 100%;
+    margin: 0px;
+
+    li {
+      text-align: center;
+      padding-bottom: 11px;
+      margin: 0px;
+    }
+
+    .navbar--current {
+      color: $primaryWhite;
+      font-weight: bold;
+      border-bottom: 5px solid $primaryWhite;
+    }
+
+    a:link {
+      text-decoration: none;
+      color: $secondarySilver;
+    }
+
+    a:active {
+      color: $primaryWhite;
+    }
+
+    a:visited {
+      color: $primaryWhite;
+    }
+  }
+
+  @include tablet {
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+
+    .navbar-logo {
+      max-width: fit-content;
+      align-items: center;
+    }
+
+    ul {
+      justify-content: left;
+      margin-top: 16px;
+
+      .navbar--current {
+        max-width: fit-content;
+      }
+    }
+    a {
+      padding: 0px 36px;
+    }
+
+    li {
+      max-width: fit-content;
+    }
+  }
+}
