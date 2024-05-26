@@ -1,15 +1,18 @@
 @font-face {
   font-family: "Avenir";
+  src: local("Avenir Next Regular");
   src: url("../../assets/Font/AvenirNextLTPro-Regular.otf") format("opentype");
   font-weight: 100;
 }
 @font-face {
-  font-family: "AvenirBold";
+  font-family: "Avenir";
+  src: local("Avenir Next Demi Bold");
   src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 300;
 }
 @font-face {
-  font-family: "AvenirDemi";
+  font-family: "Avenir";
+  src: local("Avenir Next Bold");
   src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 500;
 }
@@ -21,13 +24,13 @@
 }
 @media screen and (max-width: 768px) {
   * h1 {
-    font-family: "AvenirBold", sans-serif;
+    font-family: "Avenir", sans-serif;
     font-weight: 700;
     font-size: 24px;
     line-height: 32px;
   }
   * h4 {
-    font-family: "AvenirDemi", sans-serif;
+    font-family: "Avenir", sans-serif;
     font-weight: 600;
     font-size: 14px;
     line-height: 22px;
@@ -41,13 +44,13 @@
 }
 @media screen and (min-width: 768px) {
   * h1 {
-    font-family: "AvenirBold", sans-serif;
+    font-family: "Avenir", sans-serif;
     font-weight: 700;
     font-size: 36px;
     line-height: 44px;
   }
   * h4 {
-    font-family: "AvenirDemi", sans-serif;
+    font-family: "Avenir", sans-serif;
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
@@ -113,15 +116,11 @@ body {
   text-decoration: none;
   color: #e1e1e1;
 }
-.navbar ul a:hover {
-  color: #ffffff;
-  border-bottom: 5px solid #ffffff;
-}
 .navbar ul a:active {
   color: #ffffff;
 }
 .navbar ul a:visited {
-  color: #e1e1e1;
+  color: #ffffff;
 }
 @media screen and (min-width: 768px) {
   .navbar {
@@ -165,7 +164,7 @@ body {
 }
 .hero__title {
   color: #ffffff;
-  font-family: "AvenirBold", sans-serif;
+  font-family: "Avenir", sans-serif;
   margin-left: 16px;
 }
 @media screen and (min-width: 768px) {
@@ -185,6 +184,10 @@ body {
   padding-top: 24px;
   margin: 0px 16px;
   width: 100%;
+  background-color: #ffffff;
+}
+.about h1 {
+  color: #323232;
 }
 @media screen and (min-width: 768px) {
   .about {
@@ -269,6 +272,7 @@ body {
 }
 .photo-gallery h1 {
   margin-bottom: 0px;
+  color: #323232;
 }
 
 .article__photos--images {

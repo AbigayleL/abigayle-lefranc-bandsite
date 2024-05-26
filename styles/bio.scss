@@ -10,14 +10,14 @@
 
   @include mobile {
     h1 {
-      font-family: "AvenirBold", sans-serif;
+      font-family: "Avenir", sans-serif;
       font-weight: 700;
       font-size: 24px;
       line-height: 32px;
     }
 
     h4 {
-      font-family: "AvenirDemi", sans-serif;
+      font-family: "Avenir", sans-serif;
       font-weight: 600;
       font-size: 14px;
       line-height: 22px;
@@ -33,14 +33,14 @@
 
   @include tablet {
     h1 {
-      font-family: "AvenirBold", sans-serif;
+      font-family: "Avenir", sans-serif;
       font-weight: 700;
       font-size: 36px;
       line-height: 44px;
     }
 
     h4 {
-      font-family: "AvenirDemi", sans-serif;
+      font-family: "Avenir", sans-serif;
       font-weight: 600;
       font-size: 24px;
       line-height: 32px;
@@ -111,17 +111,12 @@ body {
       color: $secondarySilver;
     }
 
-    a:hover {
-      color: $primaryWhite;
-      border-bottom: 5px solid $primaryWhite;
-    }
-
     a:active {
       color: $primaryWhite;
     }
 
     a:visited {
-      color: $secondarySilver;
+      color: $primaryWhite;
     }
   }
 
@@ -170,7 +165,7 @@ body {
 
   &__title {
     color: #ffffff;
-    font-family: "AvenirBold", sans-serif;
+    font-family: "Avenir", sans-serif;
     margin-left: 16px;
 
     @include tablet {
@@ -189,6 +184,11 @@ body {
   padding-top: 24px;
   margin: 0px 16px;
   width: 100%;
+  background-color: $primaryWhite;
+
+  h1 {
+    color: $primaryBlack;
+  }
 
   @include tablet {
     padding-top: 48px;
@@ -267,6 +267,7 @@ body {
 
   h1 {
     margin-bottom: 0px;
+    color: $primaryBlack;
   }
 }
 
