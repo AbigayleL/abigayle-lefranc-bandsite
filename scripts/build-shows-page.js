@@ -1,3 +1,10 @@
+import BandSiteApi from "./band-site-api.js";
+
+const bandSiteApi = new BandSiteApi();
+let showDates = [];
+let selectedRow = null;
+
+/* 
 const showDates = [
   {
     DATE: "Mon Sept 09 2024",
@@ -31,33 +38,43 @@ const showDates = [
   },
 ];
 
-const showsContainer = document.getElementById("currentshows__div");
-showDates.forEach(function (show) {
-  const showDateEl = document.createElement("div");
-  showDateEl.classList.add("show-items");
-  showDateEl.innerHTML = `
+*/
+async function displayShows() {
+  const showsContainer = document.getElementById("currentshows__div");
+  showDates = await bandSiteApi.getShows();
+  showDates.forEach(function (show) {
+    const showDateEl = document.createElement("div");
+    showDateEl.classList.add("show-items");
+
+    const showDate = new Date(show.date);
+    const formattedDate = showDate.toLocaleDateString();
+
+    showDateEl.innerHTML = `
         <h6>Date</h6>
-        <p>${show.DATE}</p>
+        <p>${formattedDate}</p>
         <h6>Venue</h6>
-        <p>${show.VENUE}</p>
+        <p>${show.place}</p>
         <h6>Location</h6>
-        <p>${show.LOCATION}</p>`;
+        <p>${show.location}</p>`;
 
-  const buttonEl = document.createElement("button");
-  buttonEl.textContent = "BUY TICKETS";
-  showDateEl.appendChild(buttonEl);
+    const buttonEl = document.createElement("button");
+    buttonEl.textContent = "BUY TICKETS";
+    showDateEl.appendChild(buttonEl);
 
-  showsContainer.appendChild(showDateEl);
-});
+    showsContainer.appendChild(showDateEl);
+  });
 
-document.addEventListener("DOMContentLoaded", function () {
-  const shows = document.querySelectorAll(".show");
-  shows.forEach(function (show) {
-    show.addEventListener("click", function () {
-      shows.forEach(function (s) {
-        s.classList.remove("selected");
+  document.addEventListener("DOMContentLoaded", function () {
+    const shows = document.querySelectorAll(".show");
+    shows.forEach(function (show) {
+      show.addEventListener("click", function () {
+        shows.forEach(function (s) {
+          s.classList.remove("selected");
+        });
+        this.classList.add("selected");
       });
-      this.classList.add("selected");
     });
   });
-});
+}
+
+displayShows();

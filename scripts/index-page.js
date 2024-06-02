@@ -1,3 +1,8 @@
+import BandSiteApi from "./band-site-api.js";
+
+const bandSiteApi = new BandSiteApi();
+let posts = [];
+/* 
 const posts = [
   {
     name: "Isaac Tadesse",
@@ -19,12 +24,21 @@ const posts = [
   },
 ];
 
+*/
 // Submitting form
 
 const commentForm = document.querySelector("#add-comment__div-form");
 commentForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
+  const newcomment = {
+    name: event.target.name.value,
+    comment: event.target.comment.value,
+  };
+
+  // console.log(newcomment);
+  newComment(commentForm, newcomment);
+  /*
   const currentDate = new Date();
   const formattedDate = `${currentDate.getDate()}/${currentDate.getDate()}/${currentDate.getFullYear()}`;
 
@@ -39,11 +53,27 @@ commentForm.addEventListener("submit", (event) => {
 
   commentForm.reset();
   renderComments();
+   */
 });
 
-function renderComments() {
+async function newComment(commentForm, newcomment) {
+  try {
+    posts = await bandSiteApi.postComments(newcomment);
+    commentForm.reset();
+    renderComments();
+  } catch (error) {
+    console.error("Error submitting comment:", error);
+  }
+
+  // console.log(newcomment);
+  // comments.push(newcomment);
+}
+
+async function renderComments() {
   const commentsContainer = document.querySelector(".comments--section");
   commentsContainer.innerHTML = "";
+
+  posts = await bandSiteApi.getComments();
 
   posts.reverse().forEach((post) => {
     const postDiv = document.createElement("div");
@@ -62,7 +92,8 @@ function renderComments() {
     name.innerText = post.name;
 
     const date = document.createElement("p");
-    date.innerText = post.date;
+    const timestamp = post.timestamp;
+    date.innerText = new Date(timestamp).toLocaleDateString();
 
     const comment = document.createElement("p");
     comment.innerText = post.comment;
