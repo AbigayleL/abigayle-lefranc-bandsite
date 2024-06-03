@@ -7,13 +7,13 @@
 @font-face {
   font-family: "Avenir";
   src: local("Avenir Next Demi Bold");
-  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 300;
 }
 @font-face {
   font-family: "Avenir";
   src: local("Avenir Next Bold");
-  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 500;
 }
 @font-face {
@@ -25,13 +25,13 @@
 @font-face {
   font-family: "Avenir";
   src: local("Avenir Next Demi Bold");
-  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 300;
 }
 @font-face {
   font-family: "Avenir";
   src: local("Avenir Next Bold");
-  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 500;
 }
 footer {
@@ -120,13 +120,13 @@ footer h6 {
 @font-face {
   font-family: "Avenir";
   src: local("Avenir Next Demi Bold");
-  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
+  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
   font-weight: 300;
 }
 @font-face {
   font-family: "Avenir";
   src: local("Avenir Next Bold");
-  src: url("../../assets/Font/AvenirNextLTPro-Demi.otf") format("opentype");
+  src: url("../../assets/Font/AvenirNextLTPro-Bold.otf") format("opentype");
   font-weight: 500;
 }
 .navbar {
@@ -347,6 +347,16 @@ body {
 }
 .shows .show-items {
   border-bottom: 1px solid #e1e1e1;
+  margin-top: 0px;
+}
+.shows .show-items:hover {
+  background-color: #fafafa;
+}
+.shows .selected {
+  background-color: #e1e1e1;
+}
+.shows .show-items.selected:hover {
+  background-color: #e1e1e1;
 }
 .shows #currentshows__div {
   display: flex;

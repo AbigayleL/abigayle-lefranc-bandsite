@@ -63,16 +63,28 @@ async function displayShows() {
 
     showsContainer.appendChild(showDateEl);
   });
-
+  /*
   document.addEventListener("DOMContentLoaded", function () {
-    const shows = document.querySelectorAll(".show");
-    shows.forEach(function (show) {
-      show.addEventListener("click", function () {
-        shows.forEach(function (s) {
+    const showItems = document.querySelectorAll(".show-items");
+    showItems.forEach(function (showItem) {
+      showItem.addEventListener("click", function () {
+        showItems.forEach(function (s) {
           s.classList.remove("selected");
         });
         this.classList.add("selected");
       });
+    });
+  });
+
+  */
+
+  const showItems = document.querySelectorAll(".show-items");
+  showItems.forEach(function (showItem) {
+    showItem.addEventListener("click", function () {
+      showItems.forEach(function (item) {
+        item.classList.remove("selected");
+      });
+      this.classList.add("selected");
     });
   });
 }

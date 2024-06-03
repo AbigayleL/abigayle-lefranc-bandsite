@@ -158,6 +158,18 @@ body {
 
   .show-items {
     border-bottom: 1px solid $secondarySilver;
+    margin-top: 0px;
+  }
+
+  .show-items:hover {
+    background-color: $secondaryWhite;
+  }
+  .selected {
+    background-color: $secondarySilver;
+  }
+
+  .show-items.selected:hover {
+    background-color: $secondarySilver;
   }
 
   #currentshows__div {
